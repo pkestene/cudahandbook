@@ -1,6 +1,6 @@
 /*
  *
- * nbody_GPU_AOS_tiled.cuh
+ * nbody_GPU_SOA_tiled.cuh
  *
  * CUDA implementation of the O(N^2) N-body calculation.
  * Tiled to take advantage of the symmetry of gravitational

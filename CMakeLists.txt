@@ -61,6 +61,7 @@ add_subdirectory(histogram)
 add_subdirectory(microbench)
 add_subdirectory(streaming)
 add_subdirectory(texturing)
+#add_subdirectory(nbody)
 
 # Testing
 #enable_testing()
