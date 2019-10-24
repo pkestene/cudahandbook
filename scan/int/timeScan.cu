@@ -59,7 +59,7 @@ int *g_hostIn, *g_hostOut;
 #include "scanReduceThenScan.cuh"
 #include "scanReduceThenScan_0.cuh"
 #include "scan2Level.cuh"
-#include "ScanThrust.cuh"
+#include "scanThrust.cuh"
 
 void
 RandomArray( int *out, size_t N, int modulus )

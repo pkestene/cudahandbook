@@ -46,6 +46,7 @@
 #include <chTimer.h>
 #include <chError.h>
 
+#include <debugbreak.h>
 
 #define NUM_THREADS 64
 
@@ -121,10 +122,10 @@ cuda(Memcpy( cpuHistogram, gpuHistogram, (1<<b)*sizeof(int), cudaMemcpyDeviceToH
         counts[index] += 1;
     }
 
-for ( int j = 0; j < (1<<b); j++ ) {
-    if ( counts[j] != cpuHistogram[j] )
-        __debugbreak();
-}
+    for ( int j = 0; j < (1<<b); j++ ) {
+      if ( counts[j] != cpuHistogram[j] )
+        debug_break();
+    }
 
     //
     // compute exclusive scan of counts
@@ -220,7 +221,7 @@ TestSort( float *et, int *(*pfnSort)( int *[2], const int *, size_t ), size_t N,
     for ( size_t i = 0; i < N; i++ ) {
         if ( radixSortedArray[i] != sortedOutput[i] ) {
 #ifdef _WIN32
-            __debugbreak();
+            debug_break();
 #endif
             goto Error;
         }
