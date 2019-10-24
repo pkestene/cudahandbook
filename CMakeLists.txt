@@ -47,6 +47,8 @@ include(protect_pthread_flag)
 
 # build some executable
 add_subdirectory(SMs)
+add_subdirectory(reduction)
+add_subdirectory(concurrency)
 
 # Testing
 #enable_testing()
