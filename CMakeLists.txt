@@ -53,6 +53,9 @@ add_subdirectory(reduction)
 add_subdirectory(concurrency)
 add_subdirectory(memory)
 add_subdirectory(scan)
+add_subdirectory(corr)
+add_subdirectory(driverAPI)
+add_subdirectory(histogram)
 
 # Testing
 #enable_testing()
