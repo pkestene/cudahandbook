@@ -39,8 +39,10 @@ endif()
 include(protect_nvcc_flags)
 include(protect_pthread_flag)
 
-# other third party library
+# other third party libraries
 find_package(NUMA)
+find_package(OpenGL)
+find_package(GLUT)
 
 #####################################################################
 ##########################################################
@@ -56,6 +58,9 @@ add_subdirectory(scan)
 add_subdirectory(corr)
 add_subdirectory(driverAPI)
 add_subdirectory(histogram)
+add_subdirectory(microbench)
+add_subdirectory(streaming)
+add_subdirectory(texturing)
 
 # Testing
 #enable_testing()
@@ -74,3 +79,6 @@ message("  CUDA Compiler      : ${CMAKE_CUDA_COMPILER}")
 message("  CUDA Compiler exec : ${CUDA_NVCC_EXECUTABLE}")
 message("  CUDA Compile flags : ${CMAKE_CUDA_FLAGS}")
 message("")
+message(" Thrid party libraries")
+message("  NUMA   found : ${NUMA_FOUND}")
+message("  OpenGL found : ${OPENGL_FOUND}")

@@ -1,0 +1,5 @@
+build_exec(stream1Device)
+build_exec(stream2Async)
+build_exec(stream3Streams)
+build_exec(stream4Mapped)
+build_exec(stream5MappedXfer)
