@@ -1,0 +1,28 @@
+build_exec(AOStoSOA)
+build_exec(globalRead)
+build_exec(globalCopy)
+build_exec(globalCopy2)
+build_exec(globalReadTex)
+build_exec(globalWrite)
+build_exec(peer2peerMemcpy2)
+build_exec(peer2peerMemcpyDrv)
+target_link_libraries(peer2peerMemcpyDrv PUBLIC cuda)
+
+if (${NUMA_FOUND})
+  build_exec(peer2peerTestNUMA)
+  target_link_libraries(peer2peerTestNUMA PUBLIC NUMA::NUMA)
+endif()
+
+build_exec(pinnedBandwidth)
+build_exec(spinlockReduction)
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+  if (${NUMA_FOUND})
+    build_exec(linuxGPULoad)
+    target_link_libraries(linuxGPULoad PUBLIC NUMA::NUMA)
+  endif()
+endif()
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+  build_exec(win32GPULoad)
+endif()

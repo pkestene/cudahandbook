@@ -39,6 +39,8 @@ endif()
 include(protect_nvcc_flags)
 include(protect_pthread_flag)
 
+# other third party library
+find_package(NUMA)
 
 #####################################################################
 ##########################################################
@@ -49,6 +51,7 @@ include(protect_pthread_flag)
 add_subdirectory(SMs)
 add_subdirectory(reduction)
 add_subdirectory(concurrency)
+add_subdirectory(memory)
 
 # Testing
 #enable_testing()
