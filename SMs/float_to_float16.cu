@@ -39,6 +39,8 @@
 
 #include <stdio.h>
 
+#include <cuda_fp16.h>
+
 #include <chError.h>
 
 const size_t sizeComparisonArray = 128*1048576;

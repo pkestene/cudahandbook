@@ -41,8 +41,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include <sm_35_intrinsics.h>
+#if __CUDA_ARCH__ >= 320
 
+//#include <sm_35_intrinsics.h>
+#include <sm_32_intrinsics.h>
 
 #define SHIFT_FLAGS_LEFT	0x00
 #define SHIFT_FLAGS_RIGHT	0x01
@@ -177,3 +179,16 @@ Error:
     printf( "Error %d (%s)\n", status, cudaGetErrorString( status ) );
     return ret;
 }
+
+#else
+int
+main( int argc, char *argv[] )
+{
+
+  printf("This test is only available for CUDA SM architecture > 3.0\n");
+  return 0;
+
+}
+
+#endif // __CUDA_ARCH__
+
