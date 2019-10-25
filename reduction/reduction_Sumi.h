@@ -7,14 +7,14 @@
 
 struct CReduction_Sumi {
 public:
-    CReduction_Sumi();
+    __device__ __host__ CReduction_Sumi();
     int sum;
 
-    CReduction_Sumi& operator +=( int a );
-    volatile CReduction_Sumi& operator +=( int a ) volatile;
+    __device__ __host__ CReduction_Sumi& operator +=( int a );
+    __device__ __host__ volatile CReduction_Sumi& operator +=( int a ) volatile;
 
-    CReduction_Sumi& operator +=( const CReduction_Sumi& a );
-    volatile CReduction_Sumi& operator +=( volatile CReduction_Sumi& a ) volatile;
+    __device__ __host__ CReduction_Sumi& operator +=( const CReduction_Sumi& a );
+    __device__ __host__ volatile CReduction_Sumi& operator +=( volatile CReduction_Sumi& a ) volatile;
 
 };
 

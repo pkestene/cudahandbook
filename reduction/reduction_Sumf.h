@@ -7,14 +7,14 @@
 
 struct CReduction_Sumf {
 public:
-    CReduction_Sumf();
+    __device__ __host__ CReduction_Sumf();
     float sum;
 
-    CReduction_Sumf& operator +=( float a );
-    volatile CReduction_Sumf& operator +=( float a ) volatile;
+    __device__ __host__ CReduction_Sumf& operator +=( float a );
+    __device__ __host__ volatile CReduction_Sumf& operator +=( float a ) volatile;
 
-    CReduction_Sumf& operator +=( const CReduction_Sumf& a );
-    volatile CReduction_Sumf& operator +=( volatile CReduction_Sumf& a ) volatile;
+    __device__ __host__ CReduction_Sumf& operator +=( const CReduction_Sumf& a );
+    __device__ __host__ volatile CReduction_Sumf& operator +=( volatile CReduction_Sumf& a ) volatile;
 
 };
 

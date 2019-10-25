@@ -35,15 +35,15 @@
 
 struct CReduction_Sumi_isq {
 public:
-    CReduction_Sumi_isq();
+    __device__ __host__ CReduction_Sumi_isq();
     int sum;
     long long sumsq;
 
-    CReduction_Sumi_isq& operator +=( int a );
-    volatile CReduction_Sumi_isq& operator +=( int a ) volatile;
+    __device__ __host__ CReduction_Sumi_isq& operator +=( int a );
+    __device__ __host__ volatile CReduction_Sumi_isq& operator +=( int a ) volatile;
 
-    CReduction_Sumi_isq& operator +=( const CReduction_Sumi_isq& a );
-    volatile CReduction_Sumi_isq& operator +=( volatile CReduction_Sumi_isq& a ) volatile;
+    __device__ __host__ CReduction_Sumi_isq& operator +=( const CReduction_Sumi_isq& a );
+    __device__ __host__ volatile CReduction_Sumi_isq& operator +=( volatile CReduction_Sumi_isq& a ) volatile;
 
 };
 

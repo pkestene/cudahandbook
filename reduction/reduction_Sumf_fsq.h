@@ -7,15 +7,15 @@
 
 struct CReduction_Sumf_fsq {
 public:
-    CReduction_Sumf_fsq();
+    __device__ __host__ CReduction_Sumf_fsq();
     float sum;
     float sumsq;
 
-    CReduction_Sumf_fsq& operator +=( float a );
-    volatile CReduction_Sumf_fsq& operator +=( float a ) volatile;
+    __device__ __host__ CReduction_Sumf_fsq& operator +=( float a );
+    __device__ __host__ volatile CReduction_Sumf_fsq& operator +=( float a ) volatile;
 
-    CReduction_Sumf_fsq& operator +=( const CReduction_Sumf_fsq& a );
-    volatile CReduction_Sumf_fsq& operator +=( volatile CReduction_Sumf_fsq& a ) volatile;
+    __device__ __host__ CReduction_Sumf_fsq& operator +=( const CReduction_Sumf_fsq& a );
+    __device__ __host__ volatile CReduction_Sumf_fsq& operator +=( volatile CReduction_Sumf_fsq& a ) volatile;
 
 };
 
