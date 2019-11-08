@@ -144,7 +144,7 @@ relError( T a, T b )
 #ifndef NO_CUDA
 #include "nbody_GPU_AOS.cuh"
 #include "nbody_GPU_AOS_const.cuh"
-#include "nbody_GPU_AOS_tiled.cuh"
+//#include "nbody_GPU_AOS_tiled.cuh"
 #include "nbody_GPU_AOS_tiled_const.cuh"
 //#include "nbody_GPU_SOA_tiled.cuh"
 #include "nbody_GPU_Shuffle.cuh"
@@ -341,12 +341,12 @@ ComputeGravitation(
             cuda(Memcpy( g_hostAOS_Force, g_dptrAOS_Force, 3*g_N*sizeof(float), cudaMemcpyDeviceToHost ) );
             break;
         case GPU_AOS_tiled:
-            *ms = ComputeGravitation_GPU_AOS_tiled( 
-                g_dptrAOS_Force,
-                g_dptrAOS_PosMass,
-                g_softening*g_softening,
-                g_N );
-            cuda(Memcpy( g_hostAOS_Force, g_dptrAOS_Force, 3*g_N*sizeof(float), cudaMemcpyDeviceToHost ) );
+            // *ms = ComputeGravitation_GPU_AOS_tiled( 
+            //     g_dptrAOS_Force,
+            //     g_dptrAOS_PosMass,
+            //     g_softening*g_softening,
+            //     g_N );
+            // cuda(Memcpy( g_hostAOS_Force, g_dptrAOS_Force, 3*g_N*sizeof(float), cudaMemcpyDeviceToHost ) );
             break;
         case GPU_AOS_tiled_const:
             *ms = ComputeGravitation_GPU_AOS_tiled_const( 
