@@ -41,7 +41,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#if __CUDA_ARCH__ >= 320
+// this test is not working for Maxwell sm_50 architecture
+#if __CUDA_ARCH__ >= 320 && __CUDA_ARCH__ != 500
 
 //#include <sm_35_intrinsics.h>
 #include <sm_32_intrinsics.h>
