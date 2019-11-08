@@ -21,9 +21,12 @@ include(print_target_properties)
 include(build_macro)
 
 # always export compile commands database
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)  
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-#####################################################################
+#-------------------------------------------------------------------#
+# Cuda configuration
+#-------------------------------------------------------------------#
+
 enable_language(CUDA)
 
 #find_package(CUDA REQUIRED)
@@ -39,17 +42,18 @@ endif()
 include(protect_nvcc_flags)
 include(protect_pthread_flag)
 
+#-------------------------------------------------------------------#
 # other third party libraries
+#-------------------------------------------------------------------#
+
 find_package(NUMA)
 find_package(OpenGL)
 find_package(GLUT)
 
-#####################################################################
-##########################################################
-##########################################################
-##########################################################
-
+#-------------------------------------------------------------------#
 # build some executable
+#-------------------------------------------------------------------#
+
 add_subdirectory(SMs)
 add_subdirectory(reduction)
 add_subdirectory(concurrency)
@@ -72,7 +76,9 @@ add_subdirectory(nbody)
 message("//===================================================")
 message("  ${PROJECT_NAME} build configuration:")
 message("//===================================================")
-message("  C++ Compiler : ${CMAKE_CXX_COMPILER_ID} " 
+message("  CUDA compiler ID      : ${CMAKE_CUDA_COMPILER_ID}")
+message("  CUDA compiler Version : ${CMAKE_CUDA_COMPILER_VERSION}")
+message("  C++ Compiler : ${CMAKE_CXX_COMPILER_ID} "
   "${CMAKE_CXX_COMPILER_VERSION} " 
   "${CMAKE_CXX_COMPILER_WRAPPER}")
 message("    ${CMAKE_CXX_COMPILER}")
