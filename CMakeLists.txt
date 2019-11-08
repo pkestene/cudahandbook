@@ -26,7 +26,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #####################################################################
 enable_language(CUDA)
 
-find_package(CUDA REQUIRED)
+#find_package(CUDA REQUIRED)
 #find_package(CUDAlibs REQUIRED COMPONENTS CUFFTW CUFFT )
 
 if(NOT DEFINED CMAKE_CUDA_STANDARD)
@@ -79,6 +79,7 @@ message("    ${CMAKE_CXX_COMPILER}")
 message("  CUDA Compiler      : ${CMAKE_CUDA_COMPILER}")
 message("  CUDA Compiler exec : ${CUDA_NVCC_EXECUTABLE}")
 message("  CUDA Compile flags : ${CMAKE_CUDA_FLAGS}")
+message("  CUDA toolkit inc   : ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}")
 message("")
 message(" Thrid party libraries")
 message("  NUMA   found : ${NUMA_FOUND}")
